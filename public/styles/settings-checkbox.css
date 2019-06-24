@@ -1,0 +1,24 @@
+.settings-checkbox {
+  margin: 4px 0;
+}
+
+.settings-checkbox label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+
+.settings-checkbox label:hover,
+.settings-checkbox label:focus-within {
+  background-color: var(--settings-item-hover);
+}
+
+.settings-checkbox label:focus-within {
+  outline: 1px dotted;
+}
+
+.settings-checkbox input {
+  margin: 0;
+}

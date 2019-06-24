@@ -1,0 +1,37 @@
+.settings-tab {
+  padding: 12px 16px;
+}
+
+.settings-tab section {
+  padding: 12px 0;
+}
+
+.settings-tab h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: calc(16/14);
+  font-weight: 600;
+  color: var(--theme-text-color-strong);
+}
+
+.settings-tab__reset {
+  max-width: 400px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.settings-tab__text {
+  margin: 1.25em 0;
+  line-height: 1.5;
+}
+
+.settings-tab__danger-button {
+  padding: 6px 10px;
+  border-radius: 3px;
+  color: white;
+  background-color: var(--red-60);
+}
+
+.settings-tab__danger-button:active {
+  background-color: var(--red-70);
+}

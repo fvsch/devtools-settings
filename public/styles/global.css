@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.theme-light {
+  --settings-item-hover: var(--grey-90-a05);
+}
+
+.theme-dark {
+  --settings-item-hover: var(--grey-10-a10);
+}
+
+body {
+  margin: 0;
+  font-size: 12px;
+  line-height: calc(16/12);
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--theme-body-color);
+  background-color: var(--theme-body-background);
+  -moz-user-select: none;
+  user-select: none;
+}
+
+#panel {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+#panel > nav {
+  grid-row: 1;
+}
+
+#panel > main {
+  grid-row: 2;
+  overflow: auto;
+}
+
+p {
+  margin: 1em 0;
+}
+
+button {
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: calc(16/12);
+  color: inherit;
+  background-color: transparent;
+}
+
+button::-moz-focus-inner {
+  border: none;
+}
+
+#svg-icons {
+  display: none;
+}
