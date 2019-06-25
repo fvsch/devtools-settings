@@ -1,5 +1,7 @@
 .settings-nav {
-  display: flex;
+  display: grid;
+  grid-template-areas: "main search reset";
+  grid-template-columns: auto 1fr auto;
   gap: 4px;
   min-height: 29px;
   padding: 0 4px;
@@ -14,21 +16,35 @@
   border-inline-start: 1px solid var(--theme-splitter-color);
 }
 
-.settings-nav__list {
-  flex: none;
+.settings-nav__separator:first-child {
+  margin-inline-end: 4px;
+}
+
+.settings-nav__group {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.settings-nav__item a {
-  display: block;
-  margin-bottom: -1px;
-  padding: 6px 8px;
-  border-bottom: 1px solid transparent;
+.settings-nav__group--main {
+  grid-area: main;
+}
+
+.settings-nav__group--search {
+  grid-area: search;
+}
+
+.settings-nav__group--reset {
+  grid-area: reset;
+}
+
+.settings-nav__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 4px 8px;
   font-size: 12px;
   line-height: calc(16 / 12);
   color: var(--theme-toolbar-color);
@@ -38,13 +54,25 @@
   cursor: default;
 }
 
-.settings-nav__item a[aria-current="true"] {
+.settings-nav__tab[aria-current="true"] {
   color: var(--theme-toolbar-selected-color);
-  border-color: currentColor;
+}
+
+.settings-nav__tab[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid currentColor;
+}
+
+.theme-highcontrast .settings-nav__tab[aria-current="true"] {
+  box-shadow: inset 0 -2px 0 currentColor;
 }
 
 .settings-nav__search {
-  flex: 1 1 auto;
+  width: 100%;
   max-width: 340px;
   position: relative;
   display: block;
@@ -63,7 +91,7 @@
 .settings-nav__search input {
   height: 100%;
   width: 100%;
-  padding: 5px 7px;
+  padding: 3px 7px;
   padding-inline-start: 20px;
   border: solid 1px transparent;
   font-size: 12px;
@@ -73,9 +101,5 @@
 }
 
 .settings-nav__search input:focus {
-  border-color: var(--blue-50);
-}
-
-.settings-nav__reset {
-  margin-inline-start: auto;
+  border-color: var(--theme-input-focus-outline-color);
 }

@@ -1,19 +1,19 @@
 <script>
   import Nav from "./components/Nav.svelte";
-  import AppearanceTab from "./tabs/AppearanceTab.svelte";
-  import CodeTab from "./tabs/CodeTab.svelte";
-  import AdvancedTab from "./tabs/AdvancedTab.svelte";
-  import ResetTab from "./tabs/ResetTab.svelte";
+  import AppearanceTab from "./tabs/Appearance.svelte";
+  import GeneralTab from "./tabs/General.svelte";
+  import AdvancedTab from "./tabs/Advanced.svelte";
+  import ResetTab from "./tabs/Reset.svelte";
 
   const TABS = [
     { id: "appearance", label: "Appearance" },
-    { id: "code", label: "Code" },
+    { id: "general", label: "Tools" },
     { id: "advanced", label: "Advanced" }
   ];
 
   const TAB_COMPONENTS = {
     appearance: AppearanceTab,
-    code: CodeTab,
+    general: GeneralTab,
     advanced: AdvancedTab,
     reset: ResetTab
   };

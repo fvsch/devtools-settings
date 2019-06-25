@@ -1,9 +1,27 @@
 .settings-tab {
-  padding: 12px 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.settings-tab--columns {
+  column-count: auto;
+  column-width: 400px;
+  column-gap: 40px;
+}
+
+.theme-dark .settings-tab {
+  color: var(--theme-text-color-strong);
+}
+
+.settings-tag__nobreak {
+  break-inside: avoid;
 }
 
 .settings-tab section {
+  max-width: 600px;
   padding: 12px 0;
+  break-inside: avoid;
 }
 
 .settings-tab h2 {
@@ -14,9 +32,10 @@
   color: var(--theme-text-color-strong);
 }
 
-.settings-tab__reset {
-  max-width: 400px;
-  margin-inline: auto;
+.settings-tab .settings-tab__reset {
+  max-width: 360px;
+  margin: auto;
+  padding-block: 40px;
   text-align: center;
 }
 

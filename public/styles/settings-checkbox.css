@@ -1,5 +1,5 @@
 .settings-checkbox {
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
 .settings-checkbox label {
@@ -7,12 +7,14 @@
   align-items: center;
   gap: 6px;
   border-radius: 3px;
-  padding: 4px 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  line-height: calc(16/12);
 }
 
 .settings-checkbox label:hover,
 .settings-checkbox label:focus-within {
-  background-color: var(--settings-item-hover);
+  background-color: var(--theme-button-background);
 }
 
 .settings-checkbox label:focus-within {
@@ -21,4 +23,13 @@
 
 .settings-checkbox input {
   margin: 0;
+  margin-inline-start: -2px;
+}
+
+.settings-checkbox__info {
+  display: block;
+  font-size: 11px;
+  padding-inline-start: 28px;
+  padding-bottom: 4px;
+  color: var(--theme-text-color-alt);
 }

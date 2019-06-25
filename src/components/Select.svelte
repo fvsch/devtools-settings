@@ -1,0 +1,27 @@
+<script>
+  export let name;
+  export let options;
+  export let selected = null;
+  export let label = null;
+  export let indent = false;
+</script>
+
+<p class="settings-select {indent ? 'settings-select--indent' : ''}">
+  <label class="settings-select__label" for={`select-${name}`}>{label}</label>
+  <span class="settings-select__main">
+    <select
+      class="settings-select__select"
+      {name}
+      id={`select-${name}`}
+      on:change>
+      {#each options as option (option.value)}
+        <option checked={option.value === selected} value={option.value}>
+           {option.label}
+        </option>
+      {/each}
+    </select>
+    <svg width="8" height="8">
+      <use href="#icon-select-arrow" />
+    </svg>
+  </span>
+</p>

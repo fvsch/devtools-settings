@@ -21,10 +21,11 @@
 </script>
 
 <nav class="settings-nav">
-  <ul class="settings-nav__list">
+  <ul class="settings-nav__group settings-nav__group--main">
     {#each tabs as item (item.id)}
-      <li class="settings-nav__item">
+      <li>
         <a
+          class="settings-nav__tab"
           href="#{item.id}"
           aria-current={item.id == selected}
           on:click={getTabListener(item.id)}>
@@ -33,29 +34,30 @@
       </li>
     {/each}
   </ul>
-  <span class="settings-nav__separator" />
-  <form
-    class="settings-nav__search"
-    action="#"
-    role="search"
-    on:submit={onSubmit}>
-    <svg>
-      <use href="#icon-filter" />
-    </svg>
-    <input
-      name="q"
-      aria-label="Filter Settings"
-      placeholder="Filter Settings"
-      on:input={onInput} />
-  </form>
-  <div class="settings-nav__reset">
-    <div class="settings-nav__item">
-      <a
-        href="#reset"
-        aria-current={'reset' == selected}
-        on:click={getTabListener('reset')}>
-         Reset
-      </a>
-    </div>
+  <div class="settings-nav__group settings-nav__group--search">
+    <span class="settings-nav__separator" />
+    <form
+      class="settings-nav__search"
+      action="#"
+      role="search"
+      on:submit={onSubmit}>
+      <svg>
+        <use href="#icon-filter" />
+      </svg>
+      <input
+        name="q"
+        aria-label="Filter Settings"
+        placeholder="Filter Settings"
+        on:input={onInput} />
+    </form>
+  </div>
+  <div class="settings-nav__group settings-nav__group--reset">
+    <a
+      class="settings-nav__tab"
+      href="#reset"
+      aria-current={'reset' == selected}
+      on:click={getTabListener('reset')}>
+      Reset
+    </a>
   </div>
 </nav>

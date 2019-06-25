@@ -2,14 +2,7 @@
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.theme-light {
-  --settings-item-hover: var(--grey-90-a05);
-}
-
-.theme-dark {
-  --settings-item-hover: var(--grey-10-a10);
+  outline-color: var(--theme-focus-outline-color);
 }
 
 body {
@@ -54,6 +47,10 @@ button {
 
 button::-moz-focus-inner {
   border: none;
+}
+
+button:-moz-focusring {
+  outline: 1px dotted var(--theme-focus-outline-color);
 }
 
 #svg-icons {

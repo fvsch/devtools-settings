@@ -1,29 +1,40 @@
 .settings-radios {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  margin: 8px 0;
   gap: 4px;
-  margin: 4px -2px;
-  padding: 2px;
+}
+
+.settings-radios--indent {
+  padding-inline-start: 8px;
+}
+
+.settings-radios__label {
+  flex: none;
+  margin-inline-end: 4px;
 }
 
 .settings-radios__item {
   display: inline-block;
-  align-items: center;
-  padding: 4px 8px;
+  padding: 3px 7px;
+  border: 1px solid var(--theme-button-border);
   border-radius: 3px;
+  background-color: var(--theme-button-background);
 }
 
 .settings-radios__item--checked {
+  border-color: transparent;
   color: var(--theme-selection-color);
   background-color: var(--theme-selection-background);
 }
 
 .settings-radios__item:not(.settings-radios__item--checked):hover {
-  background-color: var(--settings-item-hover);
+  background-color: var(--theme-button-active-background);
 }
 
 .settings-radios:focus-within {
-  outline: 1px dotted;
+  outline: 1px dotted var(--theme-focus-outline-color);
 }
 
 .settings-radios__item input {

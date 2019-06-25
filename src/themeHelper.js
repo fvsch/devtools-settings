@@ -1,16 +1,16 @@
+const THEMES = ["light", "dark", "highcontrast"];
+
 export function checkTheme() {
   setTheme(getTheme());
 }
 
 export function getTheme() {
-  if (document.location.hash === '#dark') {
-    return 'dark';
-  }
-  return 'light';
+  const theme = document.location.hash.substr(1);
+  return THEMES.includes(theme) ? theme : "light";
 }
 
 export function setTheme(theme) {
-  if (!['light', 'dark'].includes(theme)) {
+  if (!THEMES.includes(theme)) {
     theme = getTheme();
   }
   const themeClass = `theme-${theme}`;
