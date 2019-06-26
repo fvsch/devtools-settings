@@ -20,7 +20,7 @@
         </option>
       {/each}
     </select>
-    <svg width="8" height="8">
+    <svg width="8" height="8" aria-hidden="true">
       <use href="#icon-select-arrow" />
     </svg>
   </span>

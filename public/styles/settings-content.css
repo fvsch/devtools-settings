@@ -1,0 +1,72 @@
+.settings-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 12px;
+}
+
+@media (min-width: 400px) {
+  .settings-content {
+    padding-inline: 20px;
+  }
+}
+
+@media (min-height: 500px) {
+  .settings-content {
+    padding-block: 28px;
+  }
+}
+
+.theme-dark .settings-content {
+  color: var(--theme-text-color-strong);
+}
+
+.settings-content__section {
+  max-width: 600px;
+  padding: 12px 0;
+  break-inside: avoid;
+}
+
+.settings-content__section--reset {
+  max-width: 360px;
+  margin: auto;
+  padding-block: 40px;
+  text-align: center;
+}
+
+.settings-content__columns {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 40px;
+}
+
+.settings-content__col {
+  /* Basis acts as min-width for making new columns, but content can be
+     narrower if in a smaller container */
+  flex: 1 1 260px;
+  /* Fit up to 3 columns */
+  max-width: 320px;
+}
+
+.settings-content h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: calc(16/14);
+  font-weight: 600;
+  color: var(--theme-text-color-strong);
+}
+
+.settings-content__text {
+  margin: .8em 0;
+  line-height: 1.5;
+}
+
+.settings-content__danger-button {
+  padding: 6px 10px;
+  border-radius: 3px;
+  color: white;
+  background-color: var(--red-60);
+}
+
+.settings-content__danger-button:active {
+  background-color: var(--red-70);
+}

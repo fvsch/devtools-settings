@@ -1,35 +1,34 @@
 <script>
+  import currentTab from "./stores/tab.js";
   import Nav from "./components/Nav.svelte";
   import AppearanceTab from "./tabs/Appearance.svelte";
-  import GeneralTab from "./tabs/General.svelte";
+  import ToolsTab from "./tabs/Tools.svelte";
   import AdvancedTab from "./tabs/Advanced.svelte";
   import ResetTab from "./tabs/Reset.svelte";
 
   const TABS = [
     { id: "appearance", label: "Appearance" },
-    { id: "general", label: "Tools" },
+    { id: "tools", label: "Tools" },
     { id: "advanced", label: "Advanced" }
   ];
 
   const TAB_COMPONENTS = {
     appearance: AppearanceTab,
-    general: GeneralTab,
+    tools: ToolsTab,
     advanced: AdvancedTab,
     reset: ResetTab
   };
 
-  let selected = "appearance";
-
   function switchTab(id = "") {
-    selected = id;
+    $currentTab = id;
   }
 
   function searchSettings(query = "") {}
 </script>
 
 <div id="panel">
-  <Nav tabs={TABS} {selected} select={switchTab} search={searchSettings} />
+  <Nav tabs={TABS} selected={$currentTab} select={switchTab} search={searchSettings} />
   <main>
-    <svelte:component this={TAB_COMPONENTS[selected]} {selected} />
+    <svelte:component this={TAB_COMPONENTS[$currentTab]} selected={$currentTab} />
   </main>
 </div>

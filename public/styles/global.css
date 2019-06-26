@@ -35,6 +35,10 @@ p {
   margin: 1em 0;
 }
 
+a {
+  color: var(--theme-highlight-blue);
+}
+
 button {
   border: none;
   padding: 0;

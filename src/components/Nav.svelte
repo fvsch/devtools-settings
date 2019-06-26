@@ -41,7 +41,7 @@
       action="#"
       role="search"
       on:submit={onSubmit}>
-      <svg>
+      <svg aria-hidden="true">
         <use href="#icon-filter" />
       </svg>
       <input

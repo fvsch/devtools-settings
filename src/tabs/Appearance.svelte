@@ -1,12 +1,9 @@
 <script>
   import Checkbox from "../components/Checkbox.svelte";
   import Radios from "../components/Radios.svelte";
+  import theme from "../stores/theme.js";
 
-  import { getTheme, setTheme } from "../themeHelper";
-  let theme = getTheme();
-  setTheme(theme);
-
-  const THEMES = [
+  const THEME_LIST = [
     { value: "light", label: "Light" },
     { value: "dark", label: "Dark" },
     { value: "highcontrast", label: "High Contrast" }
@@ -22,6 +19,11 @@
     //{ name: "application", label: "Application", initial: true },
     { name: "dom", label: "DOM", initial: false },
     { name: "scratchpad", label: "Scratchpad", initial: false }
+  ];
+
+  const EXTENSION_PANELS = [
+    { name: "vuedevtools", label: "Vue.js devtools", initial: true },
+    { name: "webhint", label: "Hints", initial: true }
   ];
 
   const OPTIONAL_BUTTONS = [
@@ -65,32 +67,49 @@
   ];
 
   function onThemeChange(event) {
-    theme = event.currentTarget.value;
-    setTheme(theme);
+    $theme = event.currentTarget.value;
   }
+
+  const mdnExtensions = `
+    Find more tools for
+    <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=angular">Angular</a>,
+    <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=react">React</a>,
+    <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=redux">Redux</a>,
+    <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=vue">Vue.js</a>,
+    <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=developer">and more…</a>
+  `;
 </script>
 
-<div class="settings-tab">
-  <section>
+<div class="settings-content">
+  <section class="settings-content__section">
     <h2>Color theme</h2>
     <Radios
       name="devtools.theme"
-      options={THEMES}
-      selected={theme}
+      options={THEME_LIST}
+      selected={$theme}
       on:change={onThemeChange} />
   </section>
-</div>
-<div class="settings-tab settings-tab--columns">
-  <section>
-    <h2>Visible tabs</h2>
-    {#each OPTIONAL_PANELS as panel (panel.name)}
-      <Checkbox {...panel} checked={panel.initial} />
-    {/each}
-  </section>
-  <section>
-    <h2>Toolbar buttons</h2>
-    {#each OPTIONAL_BUTTONS as button (button.name)}
-      <Checkbox {...button} checked={button.initial} />
-    {/each}
-  </section>
+  <div class="settings-content__columns">
+    <section class="settings-content__col settings-content__section">
+      <h2>Visible tabs</h2>
+      {#each OPTIONAL_PANELS as panel (panel.name)}
+        <Checkbox {...panel} checked={panel.initial} />
+      {/each}
+    </section>
+    <section class="settings-content__col settings-content__section">
+      <h2>Toolbar buttons</h2>
+      {#each OPTIONAL_BUTTONS as button (button.name)}
+        <Checkbox {...button} checked={button.initial} />
+      {/each}
+    </section>
+    <section class="settings-content__col settings-content__section">
+      <h2>Extensions</h2>
+      {#each EXTENSION_PANELS as extension (extension.name)}
+        <Checkbox {...extension} checked={extension.initial} />
+      {/each}
+      <p class="settings-content__text">
+        {@html mdnExtensions}
+      </p>
+    </section>
+  </div>
 </div>
