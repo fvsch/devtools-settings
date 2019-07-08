@@ -3,13 +3,13 @@
 }
 
 .settings-checkbox label {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 6px;
   border-radius: 3px;
   padding: 4px 10px;
   font-size: 12px;
-  line-height: calc(16/12);
+  line-height: calc(16 / 12);
 }
 
 .settings-checkbox label:hover,

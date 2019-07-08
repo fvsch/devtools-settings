@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-size: 12px;
-  line-height: calc(16/12);
+  line-height: calc(16 / 12);
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--theme-body-color);
   background-color: var(--theme-body-background);
@@ -44,7 +44,7 @@ button {
   padding: 0;
   font-family: inherit;
   font-size: 12px;
-  line-height: calc(16/12);
+  line-height: calc(16 / 12);
   color: inherit;
   background-color: transparent;
 }
@@ -57,6 +57,10 @@ button:-moz-focusring {
   outline: 1px dotted var(--theme-focus-outline-color);
 }
 
-#svg-icons {
-  display: none;
+svg {
+  fill: currentColor;
+}
+
+svg[aria-hidden="true"] {
+  pointer-events: none;
 }

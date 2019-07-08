@@ -1,4 +1,6 @@
 <script>
+  import Icon from "./Icon.svelte";
+
   export let selected;
   export let tabs = [];
   export let select = () => {};
@@ -29,7 +31,7 @@
           href="#{item.id}"
           aria-current={item.id == selected}
           on:click={getTabListener(item.id)}>
-           {item.label}
+          {item.label}
         </a>
       </li>
     {/each}
@@ -41,9 +43,7 @@
       action="#"
       role="search"
       on:submit={onSubmit}>
-      <svg aria-hidden="true">
-        <use href="#icon-filter" />
-      </svg>
+      <Icon id="filter" />
       <input
         name="q"
         aria-label="Filter Settings"

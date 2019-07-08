@@ -1,4 +1,6 @@
 <script>
+  import Icon from "./Icon.svelte";
+
   export let name;
   export let options;
   export let selected = null;
@@ -16,12 +18,10 @@
       on:change>
       {#each options as option (option.value)}
         <option checked={option.value === selected} value={option.value}>
-           {option.label}
+          {option.label}
         </option>
       {/each}
     </select>
-    <svg width="8" height="8" aria-hidden="true">
-      <use href="#icon-select-arrow" />
-    </svg>
+    <Icon id="select-arrow" size="8" />
   </span>
 </p>

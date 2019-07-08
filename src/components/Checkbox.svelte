@@ -19,7 +19,7 @@
   </label>
   {#if description}
     <span class="settings-checkbox__info" id={descriptionId}>
-       {description}
+      {description}
     </span>
   {/if}
 </p>

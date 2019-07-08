@@ -1,0 +1,57 @@
+.settings-checktool {
+  margin: 0;
+  overflow: hidden;
+}
+
+.settings-checktool input {
+  position: absolute;
+  left: -2em;
+}
+
+.settings-checktool label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+}
+
+.settings-checktool__icon {
+  padding: 6px;
+  border: solid 1px var(--theme-splitter-color);
+  border-radius: 50%;
+  color: var(--theme-icon-color);
+  background-color: var(--theme-body-background);
+}
+
+.settings-checktool__icon svg {
+  display: block;
+}
+
+.settings-checktool input:checked + label .settings-checktool__icon {
+  color: var(--theme-selection-color);
+  background-color: var(--theme-selection-background);
+  border-color: transparent;
+}
+
+.settings-checktool input:focus + label,
+.settings-checktool label:hover {
+  background-color: var(--theme-button-background);
+}
+
+.settings-checktool input:focus + label {
+  outline: dotted 1px var(--theme-focus-outline-color);
+  outline-offset: -1px;
+}
+
+.settings-checktool__badge {
+  display: inline-block;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--theme-text-color-alt);
+  border: solid 1px var(--theme-splitter-color);
+  border-radius: 3px;
+  padding: 2px 5px;
+}

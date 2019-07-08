@@ -27,7 +27,7 @@
   -moz-appearance: none;
   appearance: none;
   font-size: 12px;
-  line-height: calc(16/12);
+  line-height: calc(16 / 12);
   padding: 2px 2px;
   padding-inline-end: 16px;
   color: var(--theme-button-color);
