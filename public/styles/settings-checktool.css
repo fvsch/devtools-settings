@@ -1,29 +1,32 @@
 .settings-checktool {
-  margin: 0;
-  overflow: hidden;
+  position: relative;
+  margin: 2px 0;
 }
 
 .settings-checktool input {
   position: absolute;
-  left: -2em;
+  left: 8px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
 .settings-checktool label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   border-radius: 3px;
-  padding: 3px 6px;
+  padding-block: 5px;
+  padding-inline-start: 32px;
+  padding-inline-end: 10px;
   font-size: 12px;
   line-height: calc(16 / 12);
 }
 
 .settings-checktool__icon {
-  padding: 6px;
-  border: solid 1px var(--theme-splitter-color);
-  border-radius: 50%;
+  opacity: 0.6;
   color: var(--theme-icon-color);
-  background-color: var(--theme-body-background);
 }
 
 .settings-checktool__icon svg {
@@ -31,12 +34,9 @@
 }
 
 .settings-checktool input:checked + label .settings-checktool__icon {
-  color: var(--theme-selection-color);
-  background-color: var(--theme-selection-background);
-  border-color: transparent;
+  opacity: 1;
 }
 
-.settings-checktool input:focus + label,
 .settings-checktool label:hover {
   background-color: var(--theme-button-background);
 }
@@ -44,6 +44,7 @@
 .settings-checktool input:focus + label {
   outline: dotted 1px var(--theme-focus-outline-color);
   outline-offset: -1px;
+  background-color: var(--theme-button-background);
 }
 
 .settings-checktool__badge {

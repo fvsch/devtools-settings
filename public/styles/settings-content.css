@@ -1,18 +1,12 @@
 .settings-content {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 16px 12px;
+  padding: 12px;
 }
 
 @media (min-width: 400px) {
   .settings-content {
-    padding-inline: 20px;
-  }
-}
-
-@media (min-height: 500px) {
-  .settings-content {
-    padding-block: 28px;
+    padding-inline: 30px;
   }
 }
 
@@ -22,34 +16,23 @@
 
 .settings-content__section {
   max-width: 600px;
-  padding: 12px 0;
+  padding-block: 12px;
   break-inside: avoid;
-}
-
-.settings-content__section--reset {
-  max-width: 360px;
-  margin: auto;
-  padding-block: 40px;
-  text-align: center;
 }
 
 .settings-content__columns {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   gap: 0 40px;
 }
 
-.settings-content__col {
-  /* Basis acts as min-width for making new columns, but content can be
-     narrower if in a smaller container */
-  flex: 1 1 260px;
-  /* Fit up to 3 columns */
-  max-width: 320px;
-}
-
-.settings-content__col--large {
-  flex-basis: 320px;
-  max-width: 500px;
+@media (min-width: 1000px) {
+  .settings-content__columns {
+    flex-flow: row wrap;
+  }
+  .settings-content__col {
+    flex-basis: calc(50% - 20px);
+  }
 }
 
 .settings-content h2 {
@@ -80,11 +63,4 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-@media (min-width: 1000px) {
-  .settings-content__panel-list {
-    column-count: 2;
-    column-gap: 8px;
-  }
 }

@@ -1,9 +1,11 @@
 import { writable } from "svelte/store";
 
-const VALID_THEMES = ["light", "dark", "highcontrast"];
-const KEY = "devtools.theme";
+import { THEME_LIST } from "../entries.js";
 
-const store = writable(localStorage.getItem(KEY) || VALID_THEMES[0]);
+const VALID_THEMES = THEME_LIST.map(theme => theme.value);
+const STORAGE_KEY = "devtools.theme";
+
+const store = writable(localStorage.getItem(STORAGE_KEY) || VALID_THEMES[0]);
 store.subscribe(onUpdate);
 export default store;
 
@@ -17,5 +19,5 @@ function onUpdate(theme) {
     document.documentElement.className = themeClass;
   }
   // Save value
-  localStorage.setItem(KEY, theme);
+  localStorage.setItem(STORAGE_KEY, theme);
 }

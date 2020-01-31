@@ -6,21 +6,20 @@
   gap: 4px;
 }
 
-.settings-radios--indent {
-  padding-inline-start: 8px;
-}
-
 .settings-radios__label {
   flex: none;
-  margin-inline-end: 4px;
+  padding: 4px 8px;
 }
 
 .settings-radios__item {
-  display: inline-block;
-  padding: 3px 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 9px;
   border: 1px solid var(--theme-button-border);
   border-radius: 3px;
   background-color: var(--theme-button-background);
+  user-select: none;
 }
 
 .settings-radios__item--checked {

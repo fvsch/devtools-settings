@@ -5,10 +5,9 @@
   export let options;
   export let selected = null;
   export let label = null;
-  export let indent = false;
 </script>
 
-<p class="settings-select {indent ? 'settings-select--indent' : ''}">
+<p class="settings-select">
   <label class="settings-select__label" for={`select-${name}`}>{label}</label>
   <span class="settings-select__main">
     <select

@@ -1,42 +1,16 @@
 .settings-nav {
-  display: grid;
-  grid-template-areas: "main search reset";
-  grid-template-columns: auto 1fr auto;
-  gap: 4px;
-  min-height: 29px;
-  padding: 0 4px;
-  background-color: var(--theme-toolbar-background);
-  border-bottom: 1px solid var(--theme-splitter-color);
+  width: 160px;
+  max-width: 30vw;
+  overflow: hidden;
+  padding: 48px 0;
+  border-inline-end: 1px solid var(--theme-splitter-color);
+  background-color: var(--theme-sidebar-background);
 }
 
-.settings-nav__separator {
-  display: block;
-  width: 1px;
-  margin: 4px 0;
-  border-inline-start: 1px solid var(--theme-splitter-color);
-}
-
-.settings-nav__separator:first-child {
-  margin-inline-end: 4px;
-}
-
-.settings-nav__group {
-  display: flex;
+.settings-nav__tabs {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.settings-nav__group--main {
-  grid-area: main;
-}
-
-.settings-nav__group--search {
-  grid-area: search;
-}
-
-.settings-nav__group--reset {
-  grid-area: reset;
 }
 
 .settings-nav__tab {
@@ -44,7 +18,7 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 4px 8px;
+  padding: 5px 8px;
   font-size: 12px;
   line-height: calc(16 / 12);
   color: var(--theme-toolbar-color);
@@ -54,52 +28,16 @@
   cursor: default;
 }
 
+@media (min-width: 600px) {
+  .settings-nav {
+    width: 220px;
+  }
+  .settings-nav__tab {
+    padding-inline: 24px;
+  }
+}
+
 .settings-nav__tab[aria-current="true"] {
-  color: var(--theme-toolbar-selected-color);
-}
-
-.settings-nav__tab[aria-current="true"]::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  border-bottom: 1px solid currentColor;
-}
-
-.theme-highcontrast .settings-nav__tab[aria-current="true"] {
-  box-shadow: inset 0 -2px 0 currentColor;
-}
-
-.settings-nav__search {
-  width: 100%;
-  max-width: 340px;
-  position: relative;
-  display: block;
-}
-
-.settings-nav__search svg {
-  position: absolute;
-  top: calc(50% - 6px);
-  left: 5px;
-  width: 12px;
-  height: 12px;
-  fill: var(--theme-icon-dimmed-color);
-  pointer-events: none;
-}
-
-.settings-nav__search input {
-  height: 100%;
-  width: 100%;
-  padding: 3px 7px;
-  padding-inline-start: 20px;
-  border: solid 1px transparent;
-  font-size: 12px;
-  line-height: calc(16 / 12);
-  color: var(--theme-toolbar-color);
-  background-color: transparent;
-}
-
-.settings-nav__search input:focus {
-  border-color: var(--theme-input-focus-outline-color);
+  color: var(--theme-selection-color);
+  background-color: var(--theme-selection-background);
 }

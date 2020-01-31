@@ -1,16 +1,13 @@
 .settings-select {
   display: flex;
   align-items: center;
-  margin: 8px 0;
-}
-
-.settings-select--indent {
-  padding-inline-start: 8px;
+  margin: 4px 0;
+  gap: 4px;
 }
 
 .settings-select__label {
   flex: none;
-  margin-inline-end: 8px;
+  padding: 4px 8px;
 }
 
 .settings-select__main {
@@ -28,7 +25,8 @@
   appearance: none;
   font-size: 12px;
   line-height: calc(16 / 12);
-  padding: 2px 2px;
+  padding-block: 4px;
+  padding-inline-start: 4px;
   padding-inline-end: 16px;
   color: var(--theme-button-color);
   background-color: var(--theme-button-background);

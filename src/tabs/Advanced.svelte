@@ -39,5 +39,23 @@
         description="Use Tools > Web Developer > Browser Toolbox to debug
         Firefox and Firefox add-ons." />
     </section>
+    <section class="settings-content__col settings-content__section">
+      <h2>Experimental</h2>
+      <Checkbox
+        name="devtools.performance.new-panel-enabled"
+        label="Enable the new performance recorder"
+        description="Re-open developer tools to apply." />
+    </section>
+    <section class="settings-content__col settings-content__section">
+      <h2>Reset DevTools settings</h2>
+      <p class="settings-content__text">
+        Restore initial settings for every tool, including hidden preferences
+        set in
+        <code>about:config</code>
+      </p>
+      <p>
+        <button class="settings-content__danger-button">Reset Settings</button>
+      </p>
+    </section>
   </div>
 </div>

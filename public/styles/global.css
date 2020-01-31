@@ -12,23 +12,29 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--theme-body-color);
   background-color: var(--theme-body-background);
-  -moz-user-select: none;
-  user-select: none;
 }
 
 #panel {
   display: grid;
   grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
   height: 100vh;
 }
 
 #panel > nav {
-  grid-row: 1;
+  grid-row: 1 / 3;
+  grid-column: 1;
 }
 
 #panel > main {
   grid-row: 2;
+  grid-column: 2;
   overflow: auto;
+}
+
+#panel > .settings-search {
+  grid-row: 1;
+  grid-column: 2;
 }
 
 p {

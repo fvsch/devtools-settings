@@ -1,12 +1,13 @@
 <script>
+  import Icon from "./Icon.svelte";
+
   export let name;
   export let options;
   export let selected = null;
   export let label = null;
-  export let indent = false;
 </script>
 
-<p class="settings-radios {indent ? 'settings-radios--indent' : ''}">
+<p class="settings-radios">
   {#if label}
     <span class="settings-radios__label">{label}</span>
   {/if}
@@ -19,6 +20,9 @@
         value={option.value}
         checked={option.value === selected}
         on:change />
+      {#if option.icon}
+        <Icon id={option.icon} />
+      {/if}
       <span>{option.label}</span>
     </label>
   {/each}

@@ -3,24 +3,7 @@
   import Radios from "../components/Radios.svelte";
   import Select from "../components/Select.svelte";
 
-  const COLOR_UNITS = [
-    { value: "authored", label: "As Authored" },
-    { value: "hex", label: "Hexadecimal" },
-    { value: "hsl", label: "HSL(A)" },
-    { value: "rgb", label: "RGB(A)" },
-    { value: "named", label: "Color Names" }
-  ];
-  const TAB_SIZES = [
-    { value: 2, label: "2" },
-    { value: 4, label: "4" },
-    { value: 8, label: "8" }
-  ];
-  const KEY_MAPS = [
-    { value: "default", label: "Default" },
-    { value: "vim", label: "Vim" },
-    { value: "emacs", label: "Emacs" },
-    { value: "sublime", label: "Sublime Text" }
-  ];
+  import { COLOR_UNITS, TAB_SIZES, KEY_MAPS } from "../entries.js";
 
   let colorUnit = "authored";
   let tabWidth = 2;
@@ -45,7 +28,6 @@
         <Checkbox name="devtools.inspector.1" label="Show Browser Styles" />
         <Checkbox name="devtools.inspector.2" label="Truncate DOM attributes" />
         <Select
-          indent
           name="devtools.inspector.3"
           label="Default color unit"
           options={COLOR_UNITS}
@@ -55,11 +37,17 @@
       <section class="settings-content__section">
         <h2>Web Console</h2>
         <Checkbox
+          name="devtools.webconsole.persistlog"
+          label="Persist logs" />
+        <Checkbox
           name="devtools.webconsole.timestampMessages"
           label="Enable timestamps" />
         <Checkbox
           name="devtools.webconsole.groupWarningMessages"
           label="Group similar messages" />
+        <Checkbox
+          name="devtools.webconsole.input.eagerEvaluation"
+          label="Eager evaluation" />
       </section>
       <section class="settings-content__section">
         <h2>Style Editor</h2>
@@ -79,15 +67,6 @@
           label="Play camera shutter sound" />
       </section>
       <section class="settings-content__section">
-        <h2>Performance</h2>
-        <Checkbox
-          name="devtools.performance.new-panel-enabled"
-          label="Enable the new performance recorder"
-          description="Re-open developer tools to apply." />
-      </section>
-    </div>
-    <div class="settings-content__col">
-      <section class="settings-content__section">
         <h2>Editor preferences</h2>
         <Checkbox
           checked
@@ -102,14 +81,12 @@
           name="devtools.editor.expandtab"
           label="Indent using spaces" />
         <Radios
-          indent
           name="devtools.editor.tabsize"
           label="Tab size"
           options={TAB_SIZES}
           selected={tabWidth}
           on:change={setTabWidth} />
         <Select
-          indent
           name="devtools.editor.keymap"
           label="Key bindings"
           options={KEY_MAPS}
