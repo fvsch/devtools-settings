@@ -12,6 +12,7 @@
 </script>
 
 <nav class="settings-nav">
+  <h1 class="settings-nav__title">Settings</h1>
   <ul class="settings-nav__tabs">
     {#each tabs as item (item.id)}
       <li>

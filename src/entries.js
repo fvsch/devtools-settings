@@ -16,116 +16,115 @@ export const THEME_LIST = [
   }
 ];
 
-export const OPTIONAL_PANELS = [
+export const TOOLBAR_PANELS = [
   {
     name: "netmonitor",
     icon: "tool-network",
     label: "Network",
-    initial: true
+    checked: true
   },
   {
     name: "styleeditor",
     icon: "tool-styleeditor",
     label: "Style Editor",
-    initial: true
+    checked: true
   },
   {
     name: "performance",
     icon: "tool-profiler",
     label: "Performance",
-    initial: true
+    checked: true
   },
   {
     name: "memory",
     icon: "tool-memory",
     label: "Memory",
-    initial: true
+    checked: true
   },
   {
     name: "storage",
     icon: "tool-storage",
     label: "Storage",
-    initial: true
+    checked: true
   },
   {
     name: "accessibility",
     icon: "tool-accessibility",
     label: "Accessibility",
-    initial: true
+    checked: true
   },
   {
     name: "application",
     icon: "tool-application",
     label: "Application",
-    initial: true
+    checked: true
   },
   {
     name: "dom",
     icon: "tool-dom",
     label: "DOM",
-    initial: false
-  }
-];
-
-export const EXTENSION_PANELS = [
+    checked: false
+  },
   {
     name: "vuedevtools",
     icon: "extension-vue",
     label: "Vue.js devtools",
-    initial: true
+    badge: "Extension",
+    checked: true
   },
   {
     name: "webhint",
     icon: "extension-webhint",
     label: "Hints",
-    initial: false
+    badge: "Extension",
+    checked: false
   }
 ];
 
-export const OPTIONAL_BUTTONS = [
+export const TOOLBAR_BUTTONS = [
   {
     name: "pickelement",
     icon: "command-pick",
     label: "Pick an element from the page",
-    shortcut: "Cmd+Shift+C",
-    initial: true
+    badge: "⇧⌘C",
+    checked: true
   },
   {
     name: "rdm",
     icon: "command-responsivemode",
     label: "Responsive Design Mode",
-    shortcut: "Cmd+Opt+M",
-    initial: true
+    badge: "⌥⌘M",
+    checked: true
   },
   {
     name: "pickiframe",
     icon: "command-frames",
     label: "Select an iframe as the currently targeted document",
-    initial: true
+    checked: true
   },
   {
     name: "screenshot",
     icon: "command-screenshot",
     label: "Take a screenshot of the entire page",
-    initial: false
+    checked: false
   },
   {
     name: "paintflashing",
     icon: "command-paintflashing",
     label: "Toggle paint flashing",
-    initial: false
+    checked: false
   },
   {
     name: "rulers",
     icon: "command-rulers",
     label: "Toggle rulers for the page",
-    initial: false
+    checked: false
   },
   {
     name: "measure",
     icon: "command-measure",
     label: "Measure a portion of the page",
-    initial: false
+    checked: false
   }
 ];
 
@@ -139,22 +138,22 @@ export const GET_EXTENSIONS_HTML = `
 `;
 
 export const COLOR_UNITS = [
-  { value: "authored", label: "As Authored" },
-  { value: "hex", label: "Hexadecimal" },
-  { value: "hsl", label: "HSL(A)" },
-  { value: "rgb", label: "RGB(A)" },
-  { value: "named", label: "Color Names" }
+  { name: "color-unit", value: "authored", label: "As Authored" },
+  { name: "color-unit", value: "hex", label: "Hexadecimal" },
+  { name: "color-unit", value: "hsl", label: "HSL(A)" },
+  { name: "color-unit", value: "rgb", label: "RGB(A)" },
+  { name: "color-unit", value: "named", label: "Color Names" }
 ];
 
-export const TAB_SIZES = [
-  { value: 2, label: "2" },
-  { value: 4, label: "4" },
-  { value: 8, label: "8" }
+export const EDITOR_TAB_SIZES = [
+  { name: "editor-tab-size", value: 2, label: "2" },
+  { name: "editor-tab-size", value: 4, label: "4" },
+  { name: "editor-tab-size", value: 8, label: "8" }
 ];
 
-export const KEY_MAPS = [
-  { value: "default", label: "Default" },
-  { value: "vim", label: "Vim" },
-  { value: "emacs", label: "Emacs" },
-  { value: "sublime", label: "Sublime Text" }
+export const EDITOR_KEY_MAPS = [
+  { name: "editor-key-map", value: "default", label: "Default" },
+  { name: "editor-key-map", value: "vim", label: "Vim" },
+  { name: "editor-key-map", value: "emacs", label: "Emacs" },
+  { name: "editor-key-map", value: "sublime", label: "Sublime Text" }
 ];

@@ -3,7 +3,7 @@
   import Radios from "../components/Radios.svelte";
   import Select from "../components/Select.svelte";
 
-  import { COLOR_UNITS, TAB_SIZES, KEY_MAPS } from "../entries.js";
+  import { COLOR_UNITS, EDITOR_TAB_SIZES, EDITOR_KEY_MAPS } from "../entries.js";
 
   let colorUnit = "authored";
   let tabWidth = 2;
@@ -83,13 +83,13 @@
         <Radios
           name="devtools.editor.tabsize"
           label="Tab size"
-          options={TAB_SIZES}
+          options={EDITOR_TAB_SIZES}
           selected={tabWidth}
           on:change={setTabWidth} />
         <Select
           name="devtools.editor.keymap"
           label="Key bindings"
-          options={KEY_MAPS}
+          options={EDITOR_KEY_MAPS}
           selected={keymap}
           on:change={setKeymap} />
       </section>

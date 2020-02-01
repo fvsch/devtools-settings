@@ -5,7 +5,7 @@
 <div class="settings-content">
   <div class="settings-content__columns">
     <section class="settings-content__col settings-content__section">
-      <h2>Browser tabs</h2>
+      <h2>Web platform features</h2>
       <Checkbox
         name="devtools.cache.disabled"
         label="Disable HTTP cache"
@@ -31,8 +31,7 @@
       <Checkbox
         name="devtools.debugger.remote-enabled"
         label="Enable remote debugging"
-        description="Allows developer tools to debug a remote instance like
-        Firefox for Android." />
+        description="Allows this Firefox instance to be targeted for remote debugging." />
       <Checkbox
         name="devtools.chrome.enabled"
         label="Enable the Browser Toolbox"

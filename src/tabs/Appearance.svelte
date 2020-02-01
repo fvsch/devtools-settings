@@ -1,14 +1,12 @@
 <script>
   import Checkbox from "../components/Checkbox.svelte";
-  import Checktool from "../components/Checktool.svelte";
   import Radios from "../components/Radios.svelte";
   import theme from "../stores/theme.js";
 
   import {
     THEME_LIST,
-    OPTIONAL_PANELS,
-    EXTENSION_PANELS,
-    OPTIONAL_BUTTONS,
+    TOOLBAR_PANELS,
+    TOOLBAR_BUTTONS,
     GET_EXTENSIONS_HTML
   } from "../entries.js";
 
@@ -31,14 +29,9 @@
       <section class="settings-content__section">
         <h2>Available tools</h2>
         <ul class="settings-content__panel-list">
-          {#each OPTIONAL_PANELS as panel (panel.name)}
+          {#each TOOLBAR_PANELS as item (item.name)}
             <li>
-              <Checktool {...panel} checked={panel.initial} />
-            </li>
-          {/each}
-          {#each EXTENSION_PANELS as extension (extension.name)}
-            <li class="extension">
-              <Checktool {...extension} checked={extension.initial} isAddon />
+              <Checkbox {...item} />
             </li>
           {/each}
         </ul>
@@ -47,8 +40,8 @@
     <div class="settings-content__col">
       <section class="settings-content__section">
         <h2>Toolbar buttons</h2>
-        {#each OPTIONAL_BUTTONS as button (button.name)}
-          <Checktool {...button} checked={button.initial} />
+        {#each TOOLBAR_BUTTONS as item (item.name)}
+          <Checkbox {...item} />
         {/each}
       </section>
     </div>

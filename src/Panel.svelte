@@ -7,8 +7,8 @@
   import AdvancedTab from "./tabs/Advanced.svelte";
 
   const TABS = [
-    { id: "appearance", label: "Appearance" },
-    { id: "tools", label: "Tools" },
+    { id: "appearance", label: "Customize" },
+    { id: "tools", label: "Tool Options" },
     { id: "advanced", label: "Advanced" }
   ];
 
