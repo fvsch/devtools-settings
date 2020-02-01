@@ -128,15 +128,6 @@ export const TOOLBAR_BUTTONS = [
   }
 ];
 
-export const GET_EXTENSIONS_HTML = `
-  Find DevTools extensions for
-  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=angular">Angular</a>,
-  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=react">React</a>,
-  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=redux">Redux</a>,
-  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=vue">Vue.js</a>,
-  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=developer">and more…</a>
-`;
-
 export const COLOR_UNITS = [
   { name: "color-unit", value: "authored", label: "As Authored" },
   { name: "color-unit", value: "hex", label: "Hexadecimal" },
@@ -157,3 +148,98 @@ export const EDITOR_KEY_MAPS = [
   { name: "editor-key-map", value: "emacs", label: "Emacs" },
   { name: "editor-key-map", value: "sublime", label: "Sublime Text" }
 ];
+
+export const ADVANCED_DEBUGGING = {
+  title: "Debugging",
+  path: "advanced/debugging",
+  options: [
+    {
+      type: "checkbox",
+      name: "devtools.source-map.client-service.enabled",
+      label: "Enable Source Maps",
+      description: "Show original source code, when available.",
+      checked: true
+    },
+    {
+      type: "checkbox",
+      name: "devtools.debugger.remote-enabled",
+      label: "Enable remote debugging",
+      description:
+        "Allow this Firefox instance to be targeted for remote debugging."
+    },
+    {
+      type: "checkbox",
+      name: "devtools.chrome.enabled",
+      label: "Enable the Browser Toolbox",
+      description:
+        "The Browser Toolbox can be used to inspect and debug Firefox’s user interface. <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox'>Learn More</a>."
+    }
+  ]
+};
+
+export const ADVANCED_EXPERIMENTAL = {
+  title: "Experimental",
+  path: "advanced/experimental",
+  options: [
+    {
+      type: "checkbox",
+      name: "devtools.performance.new-panel-enabled",
+      label: "Enable the new performance recorder",
+      description: "Re-open developer tools to apply."
+    }
+  ]
+};
+
+export const ADVANCED_WEBPLATFORM = {
+  title: "Web Platform features",
+  path: "advanced/webplatform",
+  options: [
+    {
+      type: "checkbox",
+      name: "devtools.cache.disabled",
+      label: "Disable HTTP cache",
+      description:
+        "Applies to all tabs where developer tools are open. Does not affect Service Workers.",
+      checked: false
+    },
+    {
+      type: "checkbox",
+      name: "devtools.serviceWorkers.testing.enabled",
+      label: "Enable Service Workers over HTTP",
+      description: "Applies to all tabs where developer tools are open.",
+      checked: false
+    },
+    {
+      type: "checkbox",
+      name: "disable-js",
+      label: "Disable JavaScript for the current tab",
+      description:
+        "Reloads the page. If the tab or developer tools are closed, this setting will be forgotten.",
+      checked: false
+    }
+  ]
+};
+
+export const ADVANCED_RESET = {
+  title: "Reset DevTools settings",
+  path: "advanced/reset",
+  html: `
+  <p class="settings-content__text">
+    Restore initial settings for every tool, including hidden preferences
+    set in
+    <code>about:config</code>
+  </p>
+  <p>
+    <button class="settings-content__danger-button">Reset Settings</button>
+  </p>
+  `
+};
+
+export const GET_EXTENSIONS_HTML = `
+  Find DevTools extensions for
+  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=angular">Angular</a>,
+  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=react">React</a>,
+  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=redux">Redux</a>,
+  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=vue">Vue.js</a>,
+  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/search/?type=extension&amp;q=developer">and more…</a>
+`;

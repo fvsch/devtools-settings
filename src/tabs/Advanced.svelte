@@ -1,60 +1,36 @@
 <script>
   import Checkbox from "../components/Checkbox.svelte";
+  import {
+    ADVANCED_WEBPLATFORM,
+    ADVANCED_DEBUGGING,
+    ADVANCED_EXPERIMENTAL,
+    ADVANCED_RESET
+  } from "../entries.js";
 </script>
 
 <div class="settings-content">
   <div class="settings-content__columns">
     <section class="settings-content__col settings-content__section">
-      <h2>Web platform features</h2>
-      <Checkbox
-        name="devtools.cache.disabled"
-        label="Disable HTTP cache"
-        description="Applies to all tabs where developer tools are open. Does
-        not affect Service Workers." />
-      <Checkbox
-        name="disable-js"
-        label="Disable JavaScript for the current tab"
-        description="Reloads the page. If the tab or developer tools are closed,
-        this setting will be forgotten." />
-      <Checkbox
-        name="devtools.serviceWorkers.testing.enabled"
-        label="Enable Service Workers over HTTP"
-        description="Applies to all tabs where developer tools are open." />
+      <h2>{ADVANCED_WEBPLATFORM.title}</h2>
+      {#each ADVANCED_WEBPLATFORM.options as item (item.name)}
+        <Checkbox {...item} />
+      {/each}
     </section>
     <section class="settings-content__col settings-content__section">
-      <h2>Debugging</h2>
-      <Checkbox
-        checked
-        name="devtools.source-map.client-service.enabled"
-        label="Enable Source Maps"
-        description="Show original source code, when available." />
-      <Checkbox
-        name="devtools.debugger.remote-enabled"
-        label="Enable remote debugging"
-        description="Allows this Firefox instance to be targeted for remote debugging." />
-      <Checkbox
-        name="devtools.chrome.enabled"
-        label="Enable the Browser Toolbox"
-        description="Use Tools > Web Developer > Browser Toolbox to debug
-        Firefox and Firefox add-ons." />
+      <h2>{ADVANCED_DEBUGGING.title}</h2>
+      {#each ADVANCED_DEBUGGING.options as item (item.name)}
+        <Checkbox {...item} />
+      {/each}
     </section>
     <section class="settings-content__col settings-content__section">
-      <h2>Experimental</h2>
-      <Checkbox
-        name="devtools.performance.new-panel-enabled"
-        label="Enable the new performance recorder"
-        description="Re-open developer tools to apply." />
+      <h2>{ADVANCED_EXPERIMENTAL.title}</h2>
+      {#each ADVANCED_EXPERIMENTAL.options as item (item.name)}
+        <Checkbox {...item} />
+      {/each}
     </section>
     <section class="settings-content__col settings-content__section">
-      <h2>Reset DevTools settings</h2>
-      <p class="settings-content__text">
-        Restore initial settings for every tool, including hidden preferences
-        set in
-        <code>about:config</code>
-      </p>
-      <p>
-        <button class="settings-content__danger-button">Reset Settings</button>
-      </p>
+      <h2>{ADVANCED_RESET.title}</h2>
+      {@html ADVANCED_RESET.html}
     </section>
   </div>
 </div>

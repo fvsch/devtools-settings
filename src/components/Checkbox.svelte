@@ -11,9 +11,9 @@
   let inputId;
   let descriptionId;
   $: {
-    inputId = `${name}-input`;
+    inputId = `checkbox:${name}`;
     if (description) {
-      descriptionId = `${name}-description`;
+      descriptionId = `checkbox-description:${name}`;
     }
   }
 </script>
@@ -40,7 +40,7 @@
   </p>
   {#if description}
     <span class="settings-checkbox__info" id={descriptionId}>
-      {description}
+      {@html description}
     </span>
   {/if}
 </div>
