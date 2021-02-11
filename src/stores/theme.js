@@ -2,10 +2,14 @@ import { writable } from "svelte/store";
 
 import { THEME_LIST } from "../entries.js";
 
-const VALID_THEMES = THEME_LIST.map(theme => theme.value);
-const STORAGE_KEY = "devtools.theme";
+const VALID_THEMES = THEME_LIST.map((theme) => theme.value);
+const STORAGE_KEY = "devtools-settings.theme";
 
-const store = writable(localStorage.getItem(STORAGE_KEY) || VALID_THEMES[0]);
+const defaultTheme = matchMedia("(prefers-color-scheme:dark)").matches
+  ? "dark"
+  : "light";
+
+const store = writable(localStorage.getItem(STORAGE_KEY) || defaultTheme);
 store.subscribe(onUpdate);
 export default store;
 

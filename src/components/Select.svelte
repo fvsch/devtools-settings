@@ -10,11 +10,7 @@
 <p class="settings-select">
   <label class="settings-select__label" for={`select-${name}`}>{label}</label>
   <span class="settings-select__main">
-    <select
-      class="settings-select__select"
-      {name}
-      id={`select-${name}`}
-      on:change>
+    <select class="settings-select__select" {name} id={`select-${name}`}>
       {#each options as option (option.value)}
         <option checked={option.value === selected} value={option.value}>
           {option.label}

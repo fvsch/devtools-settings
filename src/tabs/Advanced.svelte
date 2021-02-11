@@ -4,7 +4,7 @@
     ADVANCED_WEBPLATFORM,
     ADVANCED_DEBUGGING,
     ADVANCED_EXPERIMENTAL,
-    ADVANCED_RESET
+    ADVANCED_RESET,
   } from "../entries.js";
 </script>
 

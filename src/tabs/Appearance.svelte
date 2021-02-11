@@ -7,7 +7,7 @@
     THEME_LIST,
     TOOLBAR_PANELS,
     TOOLBAR_BUTTONS,
-    GET_EXTENSIONS_HTML
+    GET_EXTENSIONS_HTML,
   } from "../entries.js";
 
   function onThemeChange(event) {
@@ -22,7 +22,8 @@
       name="devtools.theme"
       options={THEME_LIST}
       selected={$theme}
-      on:change={onThemeChange} />
+      on:change={onThemeChange}
+    />
   </section>
   <div class="settings-content__columns">
     <div class="settings-content__col">

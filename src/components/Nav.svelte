@@ -1,6 +1,4 @@
 <script>
-  import Icon from "./Icon.svelte";
-
   export let selected;
   export let tabs = [];
   export let select = () => {};
@@ -21,7 +19,8 @@
           href="#{item.id}"
           aria-current={item.id == selected}
           data-id={item.id}
-          on:click={onTabSelect}>
+          on:click={onTabSelect}
+        >
           {item.label}
         </a>
       </li>

@@ -13,13 +13,17 @@
   {/if}
   {#each options as option (option.value)}
     <label
-      class="settings-radios__item {option.value === selected ? 'settings-radios__item--checked' : ''}">
+      class="settings-radios__item {option.value === selected
+        ? 'settings-radios__item--checked'
+        : ''}"
+    >
       <input
         type="radio"
         {name}
         value={option.value}
         checked={option.value === selected}
-        on:change />
+        on:change
+      />
       {#if option.icon}
         <Icon id={option.icon} />
       {/if}

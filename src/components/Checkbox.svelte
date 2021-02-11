@@ -4,8 +4,8 @@
   export let name;
   export let icon;
   export let label;
-  export let badge;
-  export let description;
+  export let badge = null;
+  export let description = null;
   export let checked = false;
 
   let inputId;
@@ -25,11 +25,12 @@
       id={inputId}
       {name}
       {checked}
-      aria-describedby={descriptionId} />
+      aria-describedby={descriptionId}
+    />
     <label class="settings-checkbox__label" for={inputId}>
       {#if icon}
         <span class="settings-checkbox__icon">
-          <Icon class="settings-checkbox__icon" id={icon} />
+          <Icon id={icon} />
         </span>
       {/if}
       <span class="settings-checkbox__text">{label}</span>
