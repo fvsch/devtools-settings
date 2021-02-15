@@ -40,13 +40,8 @@
   background-color: var(--theme-button-background);
 }
 
-.settings-checkbox__main input:checked + .settings-checkbox__label {
-  --checkbox-icon-opacity: 1;
-}
-
 .settings-checkbox__icon {
   margin-inline-start: 2px;
-  opacity: var(--checkbox-icon-opacity, 0.6);
   color: var(--theme-icon-color);
 }
 
